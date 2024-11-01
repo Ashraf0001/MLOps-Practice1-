@@ -1,0 +1,39 @@
+project:
+  name: "project-name"
+  version: "1.0.0"
+  description: "A machine learning demo project"
+
+data:
+  train_data_path: "data/train.csv"
+  test_data_path: "data/test.csv"
+  validation_split: 0.2
+
+model:
+  type: "neural_network"
+  input_dim: 100
+  output_dim: 10
+  hidden_layers:
+    - units: 64
+      activation: "relu"
+    - units: 32
+      activation: "relu"
+  dropout_rate: 0.5
+
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.001
+  optimizer: "adam"
+  loss_function: "categorical_crossentropy"
+  metrics:
+    - "accuracy"
+
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+
+logging:
+  level: "INFO"
+  log_file: "logs/training.log"
